@@ -1,17 +1,14 @@
 import re
-import pytest
 from playwright.sync_api import Page,expect
 
-@pytest.mark.order(1)
 def test_has_title(page: Page):
     page.goto("https://playwright.dev/")
 
     # Expect a title "to contain" a substring.
     expect(page).to_have_title(re.compile("Playwright"))
 
-@pytest.mark.order(2)
 def test_get_started_links(page: Page):
-    page.goto("https://playwright.dev/")
+    page.goto("http://localhost:5173/currently-showing")
 
     # Click the get started link.
     page.get_by_role("link",name="Get started").click()

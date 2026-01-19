@@ -46,5 +46,6 @@ htmlcov/
 Thumbs.db
 cinebh-backend/
 cinebh-frontend/
+qa-collaboration/
 package-lock.json
 reports/
