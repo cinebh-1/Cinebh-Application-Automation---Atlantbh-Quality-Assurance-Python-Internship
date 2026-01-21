@@ -9,6 +9,7 @@ class SignUpPage:
         self.sign_up_button = page.get_by_role("button", name="Sign Up")
         self.vc_code_inputs = page.get_by_role("textbox")
         self.continue_button = page.get_by_text("Continue", exact=True)
+        self.success_message = page.get_by_role("heading", name="You’re all set! ")
     def enter_email(self,email):
         self.email.fill(email)
     def enter_password(self,password):
@@ -22,3 +23,5 @@ class SignUpPage:
             self.vc_code_inputs.nth(i).fill(digit)
     def click_on_continue_button(self):
         self.continue_button.click()
+    def check_success_message(self):
+        expect(self.success_message).to_be_visible()

@@ -11,13 +11,15 @@ class TestSmokeApi(APITasks):
     @allure.label("owner", "Mario Nizic")
     @allure.link("http://localhost:5173/")
     @allure.suite("Authentication")
-    @allure.feature("Login")
+    @allure.feature("Registration and Login API")
     @allure.story("Smoke Test - Login - API")
     @allure.testcase("CAAI-94")
     @pytest.mark.smoke
     @pytest.mark.order(2)
 
     def test_smoke_login_api(self):
+
+        self.complete_registration(user)
 
         self.complete_login(user)
 
