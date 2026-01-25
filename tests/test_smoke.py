@@ -4,7 +4,7 @@ import allure
 from tasks.ui_tasks import Tasks
 from utilities.user_data import user
 
-@allure.title("Smoke Test Demo Application")
+@allure.title("Smoke Test UI Cinebh")
 @allure.description("This is a smoke test for Cinebh Apllication, which tests basic features like register and login")
 @allure.tag("Smoke")
 @allure.severity(allure.severity_level.BLOCKER)

@@ -4,7 +4,7 @@ import allure
 from tasks.api_tasks import APITasks
 from utilities.user_data import user
 class TestSmokeApi(APITasks):
-    @allure.title("Smoke Test Cinebh")
+    @allure.title("Smoke Test API Cinebh")
     @allure.description("This is a smoke test for Cinebh Apllication, which tests basic features login")
     @allure.tag("Smoke")
     @allure.severity(allure.severity_level.BLOCKER)
