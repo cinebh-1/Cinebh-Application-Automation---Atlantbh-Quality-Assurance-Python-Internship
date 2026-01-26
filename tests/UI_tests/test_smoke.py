@@ -14,7 +14,7 @@ from utilities.user_data import user
 @allure.feature("Login")
 @allure.story("Smoke Test - Login - UI")
 @allure.testcase("CAAI-93")
-@pytest.mark.smoke
+@pytest.mark.smoke_ui
 @pytest.mark.order(1)
 def test_smoke_login(page_manager):
 

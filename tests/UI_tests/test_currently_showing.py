@@ -14,7 +14,7 @@ from utilities.projection_data import projection
 @allure.story("Currently Showing Features - UI")
 @allure.testcase("CAAI")
 @pytest.mark.currently_showing_ui
-@pytest.mark.order(3)
+@pytest.mark.order(2)
 def test_currently_showing(page_manager):
 
     Tasks.navigate_to_currently_showing_page(page_manager)

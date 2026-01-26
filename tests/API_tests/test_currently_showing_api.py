@@ -17,7 +17,7 @@ class TestCurrentlyShowingApi(APITasks):
     @allure.story("Currently Showing Features - API")
     @allure.testcase("CAAI")
     @pytest.mark.currently_showing_api
-    @pytest.mark.order(4)
+    @pytest.mark.order(2)
     def test_currently_showing_api(self):
 
         self.currently_showing_enter_search_term_and_verify_selection(projection)

@@ -1,5 +1,5 @@
 import random
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 import requests
 import allure
@@ -52,3 +52,25 @@ class APITasks:
         log_info(f"{BASE_URL}/movies/currently/  Status code, time elapsed and header content-type checked successfully!")
         response_currently_showing_body = response_currently_showing.json()
         log_info(f"{BASE_URL}/movies/currently/ response: {response_currently_showing_body}")
+    def verify_selection_and_date_range(self,projection):
+        log_info("Verify Upcoming Movies selection and Date Range")
+        year = 2026
+        start_day = random.randint(1, 27)
+        end_day = random.randint(start_day + 1, 28)
+        start_date = date(year, 2, start_day)
+        end_date = date(year, 2, end_day)
+        log_info(f"Start date: {start_date}, End date: {end_date}")
+        upcoming_movies_payload = {"city": projection.city,"genre": projection.genre,"time":projection.time,"startDate": start_date.strftime("%Y-%m-%d"),"endDate": end_date.strftime("%Y-%m-%d")}
+        response_upcoming_movies = requests.post(f"{BASE_URL}/movies/upcoming", json=upcoming_movies_payload)
+        assert response_upcoming_movies.status_code == 200
+        assert response_upcoming_movies.reason == ""
+        assert response_upcoming_movies.elapsed.total_seconds() < time_seconds
+        assert response_upcoming_movies.headers["Content-Type"] == header_content_type
+        log_info(f"{BASE_URL}/movies/upcoming/  Status code, time elapsed and header content-type checked successfully!")
+        response_upcoming_movies_body = response_upcoming_movies.json()
+        log_info(f"{BASE_URL}/movies/upcoming/ response: {response_upcoming_movies_body}")
+        movie_id = response_upcoming_movies_body[0].get("movieId")
+        title = response_upcoming_movies_body[0].get("title")
+        assert response_upcoming_movies_body[0].get("movieId") == movie_id
+        assert response_upcoming_movies_body[0].get("title") == title
+        log_info(f"{BASE_URL}/movies/upcoming/ Movie id: {movie_id}, Title: {title}")
