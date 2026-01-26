@@ -14,8 +14,8 @@ class TestSmokeApi(APITasks):
     @allure.feature("Registration and Login API")
     @allure.story("Smoke Test - Login - API")
     @allure.testcase("CAAI-94")
-    @pytest.mark.smoke
-    @pytest.mark.order(2)
+    @pytest.mark.smoke_api
+    @pytest.mark.order(1)
 
     def test_smoke_login_api(self):
 
