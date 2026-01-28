@@ -37,8 +37,11 @@ class EmailExtractor:
                                 body = msg.get_payload(decode=True).decode()
                             soup = BeautifulSoup(body, "html.parser")
                             verification_code = soup.find('h1').get_text(strip=True)
+                            mail.copy(mid, "[Gmail]/Trash")
+                            mail.store(mid, '+FLAGS', '\\Deleted')
+                            mail.expunge()
+                            mail.logout()
                             return verification_code
-                    mail.logout()
             except Exception as e:
                 print(f"[DEBUG] Search error: {e}")
             print(f"[DEBUG] Waiting for email to arrive... ({int(time.time() - start_time)}s)")

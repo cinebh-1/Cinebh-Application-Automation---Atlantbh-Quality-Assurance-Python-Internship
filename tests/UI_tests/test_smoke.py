@@ -1,6 +1,7 @@
 import pytest
 import allure
 
+from tasks.api_tasks import APITasks
 from tasks.ui_tasks import Tasks
 from test_data.projection_data import projection
 from utilities.user_data import user
@@ -36,3 +37,5 @@ def test_smoke(page_manager):
    Tasks.selection_city_cinema_genre(page_manager, projection)
 
    Tasks.select_date_range_upcoming_movies(page_manager)
+
+   APITasks.delete_user(APITasks,user)

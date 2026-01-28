@@ -17,7 +17,6 @@ class TestSmokeApi(APITasks):
     @allure.testcase("CAAI-94")
     @pytest.mark.smoke_api
     @pytest.mark.order(1)
-
     def test_smoke_api(self):
 
         self.complete_registration(user)
@@ -29,3 +28,5 @@ class TestSmokeApi(APITasks):
         self.currently_showing_enter_search_term_and_verify_selection(projection)
 
         self.verify_selection_and_date_range(projection)
+
+        self.delete_user(user)

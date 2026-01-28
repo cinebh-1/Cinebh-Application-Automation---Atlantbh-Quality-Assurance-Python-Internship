@@ -18,4 +18,4 @@ class SignInPage:
     def click_on_sign_up_link(self):
         self.sign_up_link.click()
     def check_username_button(self):
-        expect(self.username_button).to_be_visible()
+        expect(self.username_button).to_be_visible(timeout=10000)

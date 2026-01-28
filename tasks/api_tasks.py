@@ -96,3 +96,10 @@ class APITasks:
         assert response_upcoming_movies_body[0].get("movieId") == movie_id
         assert response_upcoming_movies_body[0].get("title") == title
         log_info(f"{BASE_URL}/movies/upcoming/ Movie id: {movie_id}, Title: {title}")
+    def delete_user(self,user):
+        log_info(f"Delete user - {user['email']}")
+        delete_user_payload = {"email": user["email"]}
+        response_delete = requests.delete(f"{BASE_URL}/auth/test/delete-user", json=delete_user_payload, headers={"X-Test-Secret": os.getenv("TEST_DELETE_USER_SECRET")})
+        assert response_delete.status_code == 204
+        assert response_delete.elapsed.total_seconds() < time_seconds
+        log_info(f"{BASE_URL}/auth/test/delete-user - Deleted user: {user['email']}")
