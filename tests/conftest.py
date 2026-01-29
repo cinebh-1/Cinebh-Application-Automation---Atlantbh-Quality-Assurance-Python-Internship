@@ -2,6 +2,7 @@ import pytest
 import os
 from playwright.sync_api import Page
 from pages.page_manager import PageManager
+import os
 @pytest.fixture(scope="session")
 def base_url():
     BASE_URL_UI = os.environ.get("BASE_URL_UI", "http://localhost:5173")
