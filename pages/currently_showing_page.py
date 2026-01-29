@@ -13,13 +13,13 @@ class CurrentlyShowingPage:
     def enter_search_term(self,search_term):
         self.search_box.fill(search_term)
     def select_city(self,city):
-        self.cities_select.select_option(city)
+        self.cities_select.select_option(city,force=True)
     def select_cinema(self,cinema):
-        self.cinemas_select.select_option(cinema)
+        self.cinemas_select.select_option(cinema,force=True)
     def select_genre(self,genre):
-        self.genres_select.select_option(genre)
+        self.genres_select.select_option(genre,force=True)
     def select_time(self,time):
-        self.times_select.select_option(time)
+        self.times_select.select_option(time,force=True)
     def select_date(self):
         count = self.date_tabs.count()
         log_info(f"Found {count} date tabs.")

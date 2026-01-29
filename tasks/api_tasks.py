@@ -4,12 +4,12 @@ import requests
 import allure
 import os
 from dotenv import load_dotenv
-from test_data.common_data import BASE_URL
 from utilities.email_getter import EmailExtractor
 from utilities.logging import log_info
 header_content_type = "application/json"
 time_seconds = 3
 load_dotenv()
+BASE_URL = os.getenv("BASE_URL")
 class APITasks:
     @allure.step("User Login")
     def complete_registration(self, user):

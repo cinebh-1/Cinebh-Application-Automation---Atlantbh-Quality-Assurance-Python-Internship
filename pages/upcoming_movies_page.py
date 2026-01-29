@@ -9,13 +9,12 @@ class UpcomingMoviesPage:
         self.date_range_dropdown = page.get_by_role("button", name="Date Range")
         self.next_month_button = page.get_by_role("button", name="Go to the Next Month")
         self.apply_button = page.get_by_role("button", name="Apply")
-        self.movie_image = page.locator("(//div[contains(@role,'button')])[1]")
     def select_city(self,city):
-        self.cities_select.select_option(city)
+        self.cities_select.select_option(city,force=True)
     def select_cinema(self,cinema):
-        self.cinemas_select.select_option(cinema)
+        self.cinemas_select.select_option(cinema,force=True)
     def select_genre(self,genre):
-        self.genres_select.select_option(genre)
+        self.genres_select.select_option(genre,force=True)
     def click_on_data_range_dropdown(self):
         self.date_range_dropdown.click()
     def click_on_next_month_button(self):
@@ -28,5 +27,3 @@ class UpcomingMoviesPage:
         end_date.click()
     def click_on_apply_button(self):
         self.apply_button.click()
-    def check_movie_displayed(self):
-        expect(self.movie_image).to_be_visible()

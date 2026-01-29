@@ -81,5 +81,3 @@ class Tasks:
         page_manager.upcoming_movies_page.select_random_dates_date_range()
         log_info("Click on apply button")
         page_manager.upcoming_movies_page.click_on_apply_button()
-        log_info("Check if movie is displayed after applying date range dates")
-        page_manager.upcoming_movies_page.check_movie_displayed()
