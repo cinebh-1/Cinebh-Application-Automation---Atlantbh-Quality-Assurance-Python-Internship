@@ -1,5 +1,4 @@
 import pytest
-import os
 from playwright.sync_api import Page
 from pages.page_manager import PageManager
 import os

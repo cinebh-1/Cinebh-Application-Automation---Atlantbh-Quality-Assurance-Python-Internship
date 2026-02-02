@@ -75,8 +75,6 @@ class Tasks:
     def select_date_range_upcoming_movies(page_manager):
         log_info("Select date range for upcoming movies")
         page_manager.upcoming_movies_page.click_on_data_range_dropdown()
-        log_info("Click on next month button on Date Range datepicker")
-        page_manager.upcoming_movies_page.click_on_next_month_button()
         log_info("Select random start date and end date for upcoming movies")
         page_manager.upcoming_movies_page.select_random_dates_date_range()
         log_info("Click on apply button")
