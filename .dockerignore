@@ -1,0 +1,17 @@
+# OS / editor stuff
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.DS_Store
+
+# Git
+.git
+.gitignore
+
+# Logs / temporary files
+*.log
+*.tmp
+
+
