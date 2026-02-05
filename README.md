@@ -117,16 +117,22 @@ Below is the project structure tree schema
 ```
 ## Running Tests
 
-To run tests, use the following command
+To run UI tests, use the following command
 
 ```bash
-  python -m pytest tests/select_desired_test_file.py
+  python -m pytest tests/UI_tests -s
+```
+
+To run API tests, use the following command
+
+```bash
+  python -m pytest tests/API_tests -s
 ```
 
 To use test markers, created in **pytest.ini** file, simply run the command in terminal
 
 ```bash
-  python -m pytest -m desired_test_marker  
+  python -m pytest -m desired_test_marker -s  
 ```
 
 ## Generating Reports
