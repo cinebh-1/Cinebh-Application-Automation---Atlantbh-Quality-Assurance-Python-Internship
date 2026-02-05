@@ -65,10 +65,10 @@ BASE_URL=http://localhost:8080/api/v1
 BASE_URL_UI=http://localhost:5173/
 TEST_DELETE_USER_SECRET=mariotester13!
 JWT_SECRET=b5d8f38c1ffc9b07499b7ac0bd7a67d313267207eb3f4fc0d3775a178f079688
-RESEND_API_KEY=re_9Jum8ETN_KpZmUiuoGKNKgChvexAMfZpB
-STRIPE_SECRET_KEY=sk_test_51SsJKjAKDyB6p9CNczBXcsREDmhGgDM8b4HH1l0v5XNDHgheps3nzPzGHBpIStsCLzYrLfhlKQUPEgDlWfK12tLF00ea9WW9nA
-STRIPE_WEBHOOK_SECRET=whsec_cb5a3a8ea741f00685f03c54df0df892e64697755b4e0ffd0bd15dedce2d7d56
-TEST_DELETE_USER_SECRET=mariotester13!
+RESEND_API_KEY=generate your own
+STRIPE_SECRET_KEY=generate your own
+STRIPE_WEBHOOK_SECRET=generate your own
+TEST_DELETE_USER_SECRET=place anything you want
 
 # Database Connection
 DB_URL=jdbc:postgresql://db:5432/cinebh_db
@@ -79,7 +79,7 @@ POSTGRES_PASSWORD=cinebh123
 POSTGRES_DB=cinebh_db
 
 # Email Integration (Gmail IMAP)
-GMAIL_APP_PASSWORD="pgbl imgr ojxv bgka"
+GMAIL_APP_PASSWORD=generate your own Gmail app password
 ```
 ## Project structure
 
